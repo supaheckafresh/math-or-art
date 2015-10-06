@@ -15,6 +15,7 @@ mathOrArt.promptBasedOnPreference = function(preference) {
         art();
 };
 
+
 function math() {
     var getNumbers = prompt('Please input two numbers you\'d like to add (separate with a space).');
     var numbers = getNumbers.trim().replace(/\s+/g, ' ').split(' ');
@@ -23,11 +24,10 @@ function math() {
         math();
     } else {
         var sum = parseFloat(numbers[0]) + parseFloat(numbers[1]);
-        console.log(numbers[0]);
-        console.log(numbers[1]);
         alert('The sum of your two numbers is: ' + sum + ".");
     }
 }
+
 
 function art() {
     var styles = art.getStyles();
