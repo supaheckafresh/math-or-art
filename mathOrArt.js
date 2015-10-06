@@ -20,7 +20,7 @@ function math() {
     var getNumbers = prompt('Please input two numbers you\'d like to add (separate with a space).');
     var numbers = getNumbers.trim().replace(/\s+/g, ' ').split(' ');
     if (numbers.length !== 2) {
-        alert('Sorry -- I didn\'t two numbers there. Please try again!');
+        alert('Sorry -- I didn\'t get two numbers there. Please try again!');
         math();
     } else {
         var sum = parseFloat(numbers[0]) + parseFloat(numbers[1]);
