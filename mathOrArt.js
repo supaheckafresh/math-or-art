@@ -1,6 +1,19 @@
 
 function mathOrArt() {
-    var preference = prompt("Do you prefer math or art?");
+    var entry = prompt('Do you prefer math or art?').trim();
+    if (entry == 'math' || entry == 'art') {
+        var preference = entry;
+        mathOrArt.promptBasedOnPreference(preference);
+    } else {
+        alert('I\'m sorry, I didn\'t recognize your answer! Please try again.');
+    }
+};
+
+mathOrArt.promptBasedOnPreference = function(preference) {
+    if (preference == 'math')
+        math();
+    else
+        art();
 };
 
 function math() {
@@ -19,6 +32,10 @@ function art() {
 art.getStyles = function() {
     var getStyles = prompt('What are your two favorite art styles? (separate with a space).');
     var styles = getStyles.trim().split(' ');
+    if (styles.length !== 2) {
+        alert('I\'m sorry, it doesn\'t seem like two styles were entered. Please try again.');
+        styles = art.getStyles();
+    }
     return styles;
 };
 
