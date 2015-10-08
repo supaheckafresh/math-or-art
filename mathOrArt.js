@@ -19,7 +19,7 @@ mathOrArt.promptBasedOnPreference = function(preference) {
 function math() {
     var getNumbers = prompt('Please input two numbers you\'d like to add (separate with a space).');
     var numbers = getNumbers.trim().replace(/\s+/g, ' ').split(' ');
-    if (numbers.length !== 2) {
+    if (numbers.length !== 2 || isNaN(numbers[0]) || isNaN(numbers[1])) {
         alert('Sorry -- I didn\'t get two numbers there. Please try again!');
         math();
     } else {
@@ -37,7 +37,7 @@ function art() {
 
 art.getStyles = function() {
     var getStyles = prompt('What are your two favorite art styles? (separate with a space).');
-    var styles = getStyles.trim().split(' ');
+    var styles = getStyles.trim().replace(/\s+/g, ' ').split(' ');
     if (styles.length !== 2) {
         alert('I\'m sorry, it doesn\'t seem like two styles were entered. Please try again.');
         styles = art.getStyles();
