@@ -56,5 +56,6 @@ art.getFavoriteOrder = function(styles) {
         alert("Sorry, your favorite doesn't match your previous entries!");
         return art.getFavoriteOrder(styles);
     }
+    //nothing
     return favorites;
 };
